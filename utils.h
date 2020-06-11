@@ -1,0 +1,1 @@
+NSString *localizedStringForKey(NSString *key);

@@ -1,0 +1,18 @@
+<dict>
+	<key>BATTERY_WIDGET_HEADER</key>
+	<string>Battery</string>
+    <key>BATTERY_MAX_CAPACITY</key>
+    <string>Max Capacity</string>
+    <key>BATTERY_LEVEL</key>
+    <string>Battery Level</string>
+    <key>WIFI_WIDGET_HEADER</key>
+	<string>Wi-Fi</string>
+    <key>STORAGE_WIDGET_HEADER</key>
+	<string>Storage</string>
+    <key>CELLULAR_WIDGET_HEADER</key>
+	<string>Cellular</string>
+    <key>LOCAL_IP_ADDRESS</key>
+    <string>Local Address</string>
+    <key>DATA_USAGE</key>
+    <string>Data Usage</string>
+</dict>

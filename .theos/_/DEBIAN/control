@@ -1,0 +1,10 @@
+Package: com.shepgoba.settingswidgets
+Name: SettingsWidgets
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm
+Description: Bring good looking widgets to the front page of settings!
+Maintainer: shepgoba
+Author: shepgoba
+Section: Tweaks
+Version: 1.2-181+debug
+Installed-Size: 516
