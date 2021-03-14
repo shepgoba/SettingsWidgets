@@ -1,0 +1,18 @@
+<dict>
+	<key>BATTERY_WIDGET_HEADER</key>
+	<string>배터리</string>
+    <key>BATTERY_MAX_CAPACITY</key>
+    <string>성능 최대치</string>
+    <key>BATTERY_LEVEL</key>
+    <string>배터리 잔량</string>
+    <key>WIFI_WIDGET_HEADER</key>
+	<string>Wi-Fi</string>
+    <key>STORAGE_WIDGET_HEADER</key>
+	<string>저장 공간</string>
+    <key>CELLULAR_WIDGET_HEADER</key>
+	<string>셀룰러</string>
+    <key>LOCAL_IP_ADDRESS</key>
+    <string>IP 주소</string>
+    <key>DATA_USAGE</key>
+    <string>데이터 사용량</string>
+</dict>

@@ -1,6 +1,9 @@
 #import "SWWidgetContainerView.h"
 #import <objc/runtime.h>
 #import "CoreTelephonyClient.h"
+
+#define kCFCoreFoundationVersionNumber_iOS_14_0_b1 (1740)
+
 @interface UIColor (ios13)
 +(id)systemBackgroundColor ;
 +(id)secondarySystemBackgroundColor ;
@@ -27,10 +30,15 @@
 @interface CALayer (Undocumented)
 @property (assign) BOOL continuousCorners;
 @end
+
+@interface STStorageSpace : NSObject
+@property(readonly) long long availableBytes;
+@end
+
 @interface STStorageDiskMonitor : NSObject
+@property(retain) STStorageSpace *storageSpace;
 +(id)sharedMonitor;
 -(void)updateDiskSpace;
--(long long)storageSpace;
 -(long long)deviceSize;
 -(long long)lastFree;
 @end
@@ -283,7 +291,14 @@ static NSString *getIPAddress() {
 					[monitor updateDiskSpace];
 
 				long long totalDiskSpace = monitor.deviceSize;
-				long long usedDiskSpace = totalDiskSpace - monitor.lastFree;
+                long long availableBytes = 0;
+                    if(kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_14_0_b1) {
+                        availableBytes = [[monitor storageSpace] availableBytes];
+                    }
+                    else {
+                        availableBytes = totalDiskSpace - monitor.lastFree;
+                    }
+				long long usedDiskSpace = totalDiskSpace - availableBytes;
 
 				g_totalDiskSpace = totalDiskSpace;
 				g_usedDiskSpace = usedDiskSpace;
