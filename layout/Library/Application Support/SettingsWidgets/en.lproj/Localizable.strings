@@ -15,4 +15,6 @@
     <string>Local Address</string>
     <key>DATA_USAGE</key>
     <string>Data Usage</string>
+    <key>UTILITY_WIDGET_HEADER</key>
+    <string>Utility</string>
 </dict>

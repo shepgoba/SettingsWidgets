@@ -118,7 +118,7 @@
 			<key>label</key>
 			<string>Widget 1</string>
 		</dict>
-		<dict>
+		<!--<dict>
 			<key>cell</key>
 			<string>PSSegmentCell</string>
 			<key>default</key>
@@ -142,6 +142,34 @@
 				<string>Storage</string>
 				<string>Wi-Fi</string>
 				<string>Cellular</string>
+			</array>
+		</dict>-->
+		<dict>
+			<key>key</key>
+			<string>widgetType1</string>
+			<key>label</key>
+			<string>Widget 1 Type</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>defaults</key>
+			<string>com.shepgoba.settingswidgetsprefs</string>
+			<key>validValues</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<!-- <integer>4</integer> -->
+			</array>
+			<key>validTitles</key>
+			<array>
+				<string>Battery Health</string>
+				<string>Storage</string>
+				<string>Wi-Fi</string>
+				<string>Cellular</string>
+				<!-- <string>Utility</string> -->
 			</array>
 		</dict>
 
@@ -168,22 +196,25 @@
 			<string>Widget 2 Enabled</string>
 		</dict>
 		<dict>
-			<key>cell</key>
-			<string>PSSegmentCell</string>
-			<key>default</key>
-			<integer>1</integer>
-			<key>defaults</key>
-			<string>com.shepgoba.settingswidgetsprefs</string>
 			<key>id</key>
 			<string>widgetOption2</string>
 			<key>key</key>
 			<string>widgetType2</string>
+			<key>label</key>
+			<string>Widget 2 Type</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>defaults</key>
+			<string>com.shepgoba.settingswidgetsprefs</string>
 			<key>validValues</key>
 			<array>
 				<integer>0</integer>
 				<integer>1</integer>
 				<integer>2</integer>
 				<integer>3</integer>
+				<!-- <integer>4</integer> -->
 			</array>
 			<key>validTitles</key>
 			<array>
@@ -191,6 +222,7 @@
 				<string>Storage</string>
 				<string>Wi-Fi</string>
 				<string>Cellular</string>
+				<!-- <string>Utility</string> -->
 			</array>
 		</dict>
 		<dict>
@@ -213,8 +245,21 @@
 			<key>action</key>
 			<string>openIconTwitter</string>
 		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>SettingsWidgets v1.2.1</string>
+		</dict>
 	</array>
 	<key>title</key>
 	<string>SettingsWidgets</string>
 </dict>
 </plist>
+
+
+egg functions:
+	lemon curd: the yolk serves as a binder to liquid via proteins
+	meringue: egg whites provide volume and structure
+	pancake: makes them fluffy and give stucture
+	crepes: binds the liquid to solids

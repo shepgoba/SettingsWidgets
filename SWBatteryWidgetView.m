@@ -11,10 +11,10 @@ extern void ADClientSetValueForScalarKey(char *key, long long val);
 -(NSString *)widgetHeaderLocalizationString {
 	return @"BATTERY_WIDGET_HEADER";
 }
--(void)setup {
-	[NSNotificationCenter.defaultCenter addObserver:self selector:@selector(updateForDataReceived:) name:@"SWBatteryDataProcessedNotification" object:nil];
-	[super setup];
+-(NSString *)prefsURL {
+	return @"prefs:root=BATTERY_USAGE";
 }
+
 -(void)additionalSetup {
 	UIDevice.currentDevice.batteryMonitoringEnabled = YES;
 	[NSNotificationCenter.defaultCenter addObserver:self selector:@selector(updateBatteryLevelText) name:@"UIDeviceBatteryLevelDidChangeNotification" object:nil];
@@ -40,8 +40,7 @@ extern void ADClientSetValueForScalarKey(char *key, long long val);
 		_healthLabel.text = [NSString stringWithFormat:@"Battery Level: %.0f%%", [UIDevice currentDevice].batteryLevel * 100];
 	}
 }
--(void)updateForDataReceived:(NSNotification *)notification {
-	NSDictionary *receievedData = [notification userInfo];
+-(void)updateForData:(NSDictionary *)receievedData {
 	NSString *maximumCapacityPercent = receievedData[@"maximumCapacityPercent"];
 	BOOL useBatteryHealth = [receievedData[@"useBatteryHealth"] boolValue];
 	_useBatteryHealth = useBatteryHealth;
@@ -50,3 +49,27 @@ extern void ADClientSetValueForScalarKey(char *key, long long val);
 }
 
 @end
+
+/*
+
+requires: com.apple.private.iokit.batterydata entitlement, probably no sandbox
+
+extern "C"
+CFArrayRef IOPSCopyPowerSourcesByType(int type);
+
+int healthPercent;
+
+NSArray *sources = (__bridge NSArray *)IOPSCopyPowerSourcesByType(1);
+NSDictionary *batteryDict = sources[0];
+if (sources && sources.count && batteryDict[@"Maximum Capacity Percent"]) {
+	healthPercent = [batteryDict[@"Maximum Capacity Percent"] intValue];
+} else {
+	healthPercent = -1;
+}
+
+double constraintedHealthPercent = fmax(fmin(healthPercent / 100.0, 1.0), 0.0) * 100;
+
+int finalPercent = (int)constraintedHealthPercent;
+NSLog(@"correctedHealthPercent: %i", finalPercent);
+
+*/

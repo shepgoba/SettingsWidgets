@@ -21,24 +21,16 @@ static inline float BtoGB(unsigned long long bytes) {
 -(NSString *)widgetHeaderLocalizationString {
 	return @"CELLULAR_WIDGET_HEADER";
 }
+-(NSString *)prefsURL {
+	return @"prefs:root=MOBILE_DATA_SETTINGS_ID";
+}
 -(void)setup {
 	[NSNotificationCenter.defaultCenter addObserver:self selector:@selector(updateForDataReceived:) name:@"SWCellularDataProcessedNotification" object:nil];
 	[super setup];
 }
 -(void)additionalSetup {
-	//[_ipAddressLabel.bottomAnchor constraintEqualToAnchor: self.bottomAnchor constant: -15].active = YES;
-	//[_ipAddressLabel.centerXAnchor constraintEqualToAnchor: self.centerXAnchor].active = YES;
 
-   /* [_diskUsageView.bottomAnchor constraintEqualToAnchor: self.bottomAnchor constant:-10].active = YES;
-    [_diskUsageView.leadingAnchor constraintEqualToAnchor: self.leadingAnchor].active = YES;
-    [_diskUsageView.trailingAnchor constraintEqualToAnchor: self.trailingAnchor].active = YES;
-    [_diskUsageView setup];*/
-	if (@available(iOS 13, *)) {
-		_loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleMedium];
-	} else {
-		_loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhite];
-	}
-
+	_loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleMedium];
 	_loadingView.translatesAutoresizingMaskIntoConstraints = NO;
 
 	[self  addSubview: _loadingView];
@@ -66,13 +58,11 @@ static inline float BtoGB(unsigned long long bytes) {
 	[_dataUsageLabel.trailingAnchor constraintEqualToAnchor: self.trailingAnchor constant: -10].active = YES;
 }
 
--(void)updateForDataReceived:(NSNotification *)notification {
+-(void)updateForData:(NSDictionary *)receievedData {
 	[_loadingView removeFromSuperview];
 	_dataUsageLabel.hidden = NO;
 
-	NSDictionary *receievedData = [notification userInfo];
 	unsigned long long cellularDataUsage = [receievedData[@"cellularUsage"] unsignedLongLongValue];
-	//NSLog(@"shep info: %llu", cellularDataUsage);
 	_dataUsageLabel.text = [NSString stringWithFormat:@"%@: %.01fGB", localizedStringForKey(@"DATA_USAGE"), round(BtoGB(cellularDataUsage) * 10.0) / 10.0];
 }
 @end

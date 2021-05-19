@@ -1,6 +1,10 @@
 #import "SWWidgetContainerView.h"
 #import <objc/runtime.h>
 #import "CoreTelephonyClient.h"
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <stdint.h>
+
 @interface UIColor (ios13)
 +(id)systemBackgroundColor ;
 +(id)secondarySystemBackgroundColor ;
@@ -24,22 +28,27 @@
 @property (nonatomic,retain) CoreTelephonyClient *client;
 @end
 
+
+@interface STStorageSpace : NSObject
+-(uint64_t)freeBytes;
+-(uint64_t)usedBytes;
+@end
+
 @interface CALayer (Undocumented)
 @property (assign) BOOL continuousCorners;
 @end
 @interface STStorageDiskMonitor : NSObject
 +(id)sharedMonitor;
 -(void)updateDiskSpace;
--(long long)storageSpace;
--(long long)deviceSize;
--(long long)lastFree;
+-(uint64_t)deviceSize;
+-(uint64_t)lastFree;
+-(STStorageSpace *)storageSpace;
 @end
 
 @interface BatteryHealthUIController
 -(NSString *)getChargeCapacityRemaining;
 -(void)updateData;
 @end
-
 
 static NSString *getIPAddress() {
     NSString *address = @"error";
@@ -111,28 +120,26 @@ static NSString *getIPAddress() {
 }
 -(void)setupWidgetsWithType1:(SWWidgetType)widgetType1 type2:(SWWidgetType)widgetType2 transparentBackground:(BOOL)transparent widgetInset:(int)inset cornerRadius:(int)cornerRadius {
 	//widgetType1 = SWWidgetTypeNone;
+	_widgetType1 = widgetType1;
+	_widgetType2 = widgetType2;
 
 	_transparentWidgetBackgrounds = transparent;
 	Class _widgetView1Class;
 	Class _widgetView2Class;
-
-	SEL _widgetView1Page;
-	SEL _widgetView2Page;
 	
-	int maxWidgetCount = 4;
-	Class classList[] = {[SWBatteryWidgetView class], [SWStorageWidgetView class], [SWWifiWidgetView class], [SWCellularWidgetView class]};
-	SEL pageList[] = {@selector(openBatteryPage), @selector(openStoragePage), @selector(openWifiPage), @selector(openCellularPage)};
+	int maxWidgetCount = 5;
+	const Class classList[] = {[SWBatteryWidgetView class], [SWStorageWidgetView class], [SWWifiWidgetView class], [SWCellularWidgetView class], [SWUtilityWidgetView class]};
 	
 	if (widgetType1 != SWWidgetTypeNone) {
 		if (widgetType1 < maxWidgetCount) {
 			_widgetView1Class = classList[widgetType1];
-			_widgetView1Page = pageList[widgetType1];
+			//_widgetView1Page = pageList[widgetType1];
 		}
 	}
 	if (widgetType2 != SWWidgetTypeNone) {
 		if (widgetType2 < maxWidgetCount) {
 			_widgetView2Class = classList[widgetType2];
-			_widgetView2Page = pageList[widgetType2];
+			//_widgetView2Page = pageList[widgetType2];
 		}
 	}
 
@@ -150,7 +157,7 @@ static NSString *getIPAddress() {
 			_widgetView1.layer.continuousCorners = YES;
 		}
 		_widgetView1.translatesAutoresizingMaskIntoConstraints = NO;
-		UITapGestureRecognizer *widget1TapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:_widgetView1Page];
+		UITapGestureRecognizer *widget1TapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:_widgetView1 action:@selector(openPrefsURL)];
 		[_widgetView1 addGestureRecognizer:widget1TapGestureRecognizer];
 		if ([_widgetView1 respondsToSelector:@selector(setup)])
 			[_widgetView1 setup];
@@ -167,7 +174,7 @@ static NSString *getIPAddress() {
 			_widgetView2.layer.continuousCorners = YES;
 		}
 		_widgetView2.translatesAutoresizingMaskIntoConstraints = NO;
-		UITapGestureRecognizer *widget2TapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:_widgetView2Page];
+		UITapGestureRecognizer *widget2TapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:_widgetView2 action:@selector(openPrefsURL)];
 		[_widgetView2 addGestureRecognizer:widget2TapGestureRecognizer];
 		if ([_widgetView2 respondsToSelector:@selector(setup)])
 			[_widgetView2 setup];
@@ -249,48 +256,58 @@ static NSString *getIPAddress() {
 			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 				NSBundle *storageSettingsBundle = [NSBundle bundleWithPath:@"/System/Library/PreferenceBundles/BatteryUsageUI.bundle"];
 				[storageSettingsBundle load];
-					Class healthClass = objc_getClass("BatteryHealthUIController");
-					if (healthClass) {
-						BatteryHealthUIController *instance = [healthClass new];
-						if (instance) {
-							[instance updateData];
-							g_maximumCapacityPercent = [instance getChargeCapacityRemaining];
-						}
-					}
-					__block BOOL useBatteryHealth = NO;
-					if (![g_maximumCapacityPercent isEqual: @"—"])
-						useBatteryHealth = YES;
+				Class healthClass = objc_getClass("BatteryHealthUIController");
+				if (healthClass) {
+					BatteryHealthUIController *instance = [healthClass new];
+					[instance updateData];
+					g_maximumCapacityPercent = [instance getChargeCapacityRemaining];
+				}
+				__block BOOL useBatteryHealth = NO;
+				if (![g_maximumCapacityPercent isEqual: @"—"])
+					useBatteryHealth = YES;
 
 				dispatch_async(dispatch_get_main_queue(), ^{
 					//_healthLabel.text = _useBatteryHealth ? [NSString stringWithFormat:@"Max Capacity: %@", _maximumCapacityPercent] : [NSString stringWithFormat:@"Battery Level: %.0f%%", [UIDevice currentDevice].batteryLevel*100];
 					NSDictionary *data = @{@"useBatteryHealth": @(useBatteryHealth), @"maximumCapacityPercent": g_maximumCapacityPercent};
-					[NSNotificationCenter.defaultCenter postNotificationName:@"SWBatteryDataProcessedNotification" object:nil userInfo:data];
+					if (_widgetType1 == SWWidgetTypeBattery)
+						([_widgetView1 updateForData:data]);
+					if (_widgetType2 == SWWidgetTypeBattery)
+						[_widgetView2 updateForData:data];
 				});
 			});
 		});
 	}
 	if ([self shouldLoadStorageData]) {		
 		static dispatch_once_t dataToken;
-		static long long g_totalDiskSpace;
-		static long long g_usedDiskSpace;
+		static uint64_t g_totalDiskSpace;
+		static uint64_t g_usedDiskSpace;
 
 		dispatch_once(&dataToken, ^{
 			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 				NSBundle *storageSettingsBundle = [NSBundle bundleWithPath:@"/System/Library/PreferenceBundles/StorageSettings.bundle"];
 				[storageSettingsBundle load];
 				STStorageDiskMonitor *monitor = [objc_getClass("STStorageDiskMonitor") new];
+
+				uint64_t totalDiskSpace = monitor.deviceSize;
+				uint64_t usedDiskSpace;
 				if (monitor && [monitor respondsToSelector:@selector(updateDiskSpace)])
 					[monitor updateDiskSpace];
 
-				long long totalDiskSpace = monitor.deviceSize;
-				long long usedDiskSpace = totalDiskSpace - monitor.lastFree;
+				// iOS 14
+				if ([monitor respondsToSelector:@selector(storageSpace)]) {
+					usedDiskSpace = monitor.storageSpace.usedBytes;
+				} else {
+					usedDiskSpace = totalDiskSpace - monitor.lastFree;
+				}
 
 				g_totalDiskSpace = totalDiskSpace;
 				g_usedDiskSpace = usedDiskSpace;
 				dispatch_async(dispatch_get_main_queue(), ^{
-
 					NSDictionary *data = @{@"usedDiskSpace": @(g_usedDiskSpace), @"totalDiskSpace": @(g_totalDiskSpace)};
-					[NSNotificationCenter.defaultCenter postNotificationName:@"SWStorageDataProcessedNotification" object:nil userInfo:data];
+					if (_widgetType1 == SWWidgetTypeStorage)
+						[_widgetView1 updateForData:data];
+					if (_widgetType2 == SWWidgetTypeStorage)
+						[_widgetView2 updateForData:data];
 				});
 			});
 		});
@@ -299,7 +316,11 @@ static NSString *getIPAddress() {
 		NSString *result = getIPAddress();
 
 		NSDictionary *data = @{@"ipAddress": result};
-		[NSNotificationCenter.defaultCenter postNotificationName:@"SWWiFiDataProcessedNotification" object:nil userInfo:data];
+		if (_widgetType1 == SWWidgetTypeWifi)
+			[_widgetView1 updateForData:data];
+		if (_widgetType2 == SWWidgetTypeWifi)
+			[_widgetView2 updateForData:data];
+		//[NSNotificationCenter.defaultCenter postNotificationName:@"SWWiFiDataProcessedNotification" object:nil userInfo:data];
 	}
 	if ([self shouldLoadCellularData]) {
 		PSUICoreTelephonyDataCache *dataCache = [objc_getClass("PSUICoreTelephonyDataCache") sharedInstance];
@@ -310,32 +331,14 @@ static NSString *getIPAddress() {
 			unsigned long long actualDataUsageBytes = usage.cellularHome + usage.cellularRoaming;
 			dispatch_async(dispatch_get_main_queue(), ^{
 				NSDictionary *data = @{@"cellularUsage": @(actualDataUsageBytes)};
-				[NSNotificationCenter.defaultCenter postNotificationName:@"SWCellularDataProcessedNotification" object:nil userInfo:data];
+				if (_widgetType1 == SWWidgetTypeCellular)
+					[_widgetView1 updateForData:data];
+				if (_widgetType2 == SWWidgetTypeCellular)
+					[_widgetView2 updateForData:data];
 			});
 	
 		}];
 	}
-}
-
--(void)openBatteryPage {
-	[[NSNotificationCenter defaultCenter] 
-		postNotificationName:@"SWPushBatteryPage" 
-		object:self];
-}
--(void)openStoragePage {
-	[[NSNotificationCenter defaultCenter] 
-		postNotificationName:@"SWPushStoragePage" 
-		object:self];
-}
--(void)openWifiPage {
-	[[NSNotificationCenter defaultCenter] 
-		postNotificationName:@"SWPushWifiPage" 
-		object:self];
-}
--(void)openCellularPage {
-	[[NSNotificationCenter defaultCenter] 
-		postNotificationName:@"SWPushCellularPage" 
-		object:self];
 }
 -(void)doNothing {
 

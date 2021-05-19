@@ -57,62 +57,23 @@
    	}
 	
 }
+
 -(void)applySettings {
 	pid_t pid;
 	const char *argv[] = {"killall", "Preferences", NULL};
-	posix_spawn(&pid, "/usr/bin/killall", NULL, NULL, (char* const*)argv, NULL);
+	posix_spawn(&pid, "/usr/bin/killall", NULL, NULL, (char * const *)argv, NULL);
 }
+
 -(void)setPreferenceValue:(id)value specifier:(PSSpecifier *)specifier {
 	[super setPreferenceValue:value specifier:specifier];
-	//static int pastIndex1 = -1;
-	//static int pastIndex2 = -1;
-	/*PSSpecifier *widgetSelect1 = [self specifierForID:@"widgetOption1"];
-	PSSpecifier *widgetSelect2 = [self specifierForID:@"widgetOption2"];
-	if (specifier == widgetSelect1) {
-		NSNumber *valueObj = (NSNumber *)value;
-		int controlValue = [valueObj intValue];
 
-		UISegmentedControl *otherControl = [widgetSelect2 propertyForKey:@"control"];
-		[otherControl setEnabled:NO forSegmentAtIndex:controlValue];
-		if (controlValue != otherControl.selectedSegmentIndex) {
-			[otherControl setEnabled:YES forSegmentAtIndex:controlValue];
-			//otherControl.selectedSegmentIndex = controlValue ?: 0;
-		}
-		if (controlValue == 0)
-			otherControl.selectedSegmentIndex = 1;
-		else
-			otherControl.selectedSegmentIndex = 0;
-		//pastIndex1 = controlValue;
-	} else if (specifier == widgetSelect2) {
-		NSNumber *valueObj = (NSNumber *)value;
-		int controlValue = [valueObj intValue];
-
-		UISegmentedControl *otherControl = [widgetSelect1 propertyForKey:@"control"];
-		[otherControl setEnabled:NO forSegmentAtIndex:controlValue];
-		if (controlValue != otherControl.selectedSegmentIndex) {
-			[otherControl setEnabled:YES forSegmentAtIndex:controlValue];
-			//otherControl.selectedSegmentIndex = controlValue ?: 0;
-		}
-		if (controlValue == 0)
-			otherControl.selectedSegmentIndex = 1;
-		else
-			otherControl.selectedSegmentIndex = 0;
-		//pastIndex2 = controlValue;
-	}*/
 	PSSpecifier *widget2EnabledSpecifier = [self specifierForID:@"widget2EnabledSwitch"];
 	if (specifier == widget2EnabledSpecifier) {
-		//NSNumber *valueObj = value;
 		UISwitch *widget2EnabledSwitch = [widget2EnabledSpecifier propertyForKey:@"control"];
 		if (widget2EnabledSwitch.isOn) {
-			//[self removeContiguousSpecifiers:@[self.savedSpecifiers[@"widgetOption2"]] animated:YES];
 			[self insertContiguousSpecifiers:@[self.savedSpecifiers[@"widgetOption2"]] afterSpecifierID:@"widget2EnabledSwitch" animated:YES];
 		} else {
 			[self removeContiguousSpecifiers:@[self.savedSpecifiers[@"widgetOption2"]] animated:YES];
-			/*PSSpecifier *widgetSelect1 = [self specifierForID:@"widgetOption1"];
-			UISegmentedControl *otherControl = [widgetSelect1 propertyForKey:@"control"];
-			for (int i = 0; i < otherControl.numberOfSegments; i++) {
-				[otherControl setEnabled:YES forSegmentAtIndex: i];
-			}*/
 		}
 	}
 

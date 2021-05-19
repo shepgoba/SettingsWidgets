@@ -1,6 +1,18 @@
 #import "SWWidgetView.h"
+#import <objc/runtime.h>
+
+@interface PSURLManager : NSObject
++ (id)sharedManager;
+- (void)processURL:(id)arg1 animated:(_Bool)arg2 fromSearch:(_Bool)arg3 withCompletion:(id)arg4;
+@end
 
 @implementation SWWidgetView
+-(instancetype)init {
+    if (self = [super init])  {
+       	self.hasPrefsURL = YES;
+    }
+    return self;
+}
 -(void)setup {
 	NSBundle *tweakBundle = [[NSBundle alloc] initWithPath:@"/Library/Application Support/SettingsWidgets"];
 	NSString *imagePath = [tweakBundle pathForResource:self.iconImage ofType:@"png"];
@@ -35,10 +47,21 @@
 
 	[self additionalSetup];
 }
+-(void)openPrefsURL {
+	if (self.hasPrefsURL) {
+		static Class managerClass = nil;
+		if (!managerClass)
+			managerClass = objc_getClass("PSURLManager");
+		[[managerClass sharedManager] processURL:[NSURL URLWithString:self.prefsURL] animated: YES fromSearch:NO withCompletion:nil];
+	}
+}
 -(void)additionalSetup {
 	// Do additonal setup here
 }
 -(void)updateForBigWidgetView {
 	// Update for widget being big
+}
+-(void)updateForData:(NSDictionary *)data {
+	
 }
 @end

@@ -7,13 +7,11 @@
 -(NSString *)widgetHeaderLocalizationString {
     return @"STORAGE_WIDGET_HEADER";
 }
-
+-(NSString *)prefsURL {
+    return @"prefs:root=General&path=STORAGE_MGMT%23OFFLOAD";
+}
 -(SWDiskUsageView *)diskUsageView {
     return _diskUsageView;
-}
--(void)setup {
-	[NSNotificationCenter.defaultCenter addObserver:self selector:@selector(updateForDataReceived:) name:@"SWStorageDataProcessedNotification" object:nil];
-	[super setup];
 }
 -(void)additionalSetup {
     _diskUsageView = [[SWDiskUsageView alloc] init];
@@ -26,11 +24,9 @@
     [_diskUsageView.trailingAnchor constraintEqualToAnchor: self.trailingAnchor].active = YES;
     [_diskUsageView setup];
 }
--(void)updateForDataReceived:(NSNotification *)notification {
-	NSDictionary *receievedData = [notification userInfo];
+-(void)updateForData:(NSDictionary *)receievedData {
 	NSUInteger usedDiskSpace = [receievedData[@"usedDiskSpace"] integerValue];
     NSUInteger totalDiskSpace = [receievedData[@"totalDiskSpace"] integerValue];
-    
     [_diskUsageView updateDiskBarForUsedDiskSpace:usedDiskSpace totalSpace:totalDiskSpace];
 }
 

@@ -1,3 +1,5 @@
+#import "utils.h"
+
 NSString *localizedStringForKey(NSString *key) {
     static NSBundle *tweakBundle;
     if (!tweakBundle)

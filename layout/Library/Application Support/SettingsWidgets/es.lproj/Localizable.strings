@@ -15,4 +15,6 @@
     <string>Dirección IP</string>
     <key>DATA_USAGE</key>
     <string>Periodo actual</string>
+    <key>UTILITY_WIDGET_HEADER</key>
+    <string>Utilidad</string>
 </dict>

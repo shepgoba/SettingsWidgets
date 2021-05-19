@@ -1,5 +1,5 @@
-#import "SWWifiWidgetView.h"
 #import "utils.h"
+#import "SWWifiWidgetView.h"
 
 @implementation SWWifiWidgetView
 -(NSString *)iconImage {
@@ -8,9 +8,8 @@
 -(NSString *)widgetHeaderLocalizationString {
     return @"WIFI_WIDGET_HEADER";
 }
--(void)setup {
-	[NSNotificationCenter.defaultCenter addObserver:self selector:@selector(updateForDataReceived:) name:@"SWWiFiDataProcessedNotification" object:nil];
-	[super setup];
+-(NSString *)prefsURL {
+	return @"prefs:root=WIFI";
 }
 -(void)additionalSetup {
 
@@ -27,12 +26,10 @@
 	[_ipAddressLabel.leadingAnchor constraintEqualToAnchor: self.leadingAnchor constant: 10].active = YES;
 	[_ipAddressLabel.trailingAnchor constraintEqualToAnchor: self.trailingAnchor constant: -10].active = YES;
 }
--(void)updateForDataReceived:(NSNotification *)notification {
-		NSBundle *tweakBundle = [[NSBundle alloc] initWithPath:@"/Library/Application Support/SettingsWidgets"];
-
-	NSDictionary *receievedData = [notification userInfo];
+-(void)updateForData:(NSDictionary *)receievedData {
 	NSString *ipAddressString = receievedData[@"ipAddress"];
-
-	_ipAddressLabel.text = [NSString stringWithFormat:@"%@:\n%@", [tweakBundle localizedStringForKey:@"LOCAL_IP_ADDRESS" value:@"" table:nil], ipAddressString];
+	NSString *localizedIPAddressString = localizedStringForKey(@"LOCAL_IP_ADDRESS");
+	
+	_ipAddressLabel.text = [NSString stringWithFormat:@"%@:\n%@", localizedIPAddressString, ipAddressString];
 }
 @end
