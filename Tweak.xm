@@ -69,7 +69,7 @@ static SWWidgetType widgetType2;
 
 static void loadPrefs() {
 	NSDictionary *settings = [[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.shepgoba.settingswidgetsprefs"];
-
+	NSLog(@"jew %@", settings);
 
   	enabled = boolForKey(settings, @"enabled", YES);
 	transparentMode = boolForKey(settings, @"transparentMode", NO);
@@ -86,25 +86,19 @@ static void loadPrefs() {
 - (id)specifierForID;
 @end
 
-@interface IXAppInstallCoordinator : NSObject
-+(void)uninstallAppWithBundleID:(id)arg1 requestUserConfirmation:(BOOL)arg2 waitForDeletion:(BOOL)arg3 completion:(/*^block*/id)arg4 ;
-@end
-
-
-//inc byte [rel age]
 
 %group Tweak
 %hook PSUIPrefsListController
 %property (nonatomic, retain) SWWidgetContainerView *widgetContainerView;
 -(void)viewWillAppear:(BOOL)arg1 {
 	%orig;
-	UITableView *tblView = [self valueForKey:@"_table"];
+	UITableView *tblView = self.table;
 	self.widgetContainerView.frame = CGRectMake(0, 0, tblView.frame.size.width, widgetHeight < MIN_WIDGET_HEIGHT ? MIN_WIDGET_HEIGHT : widgetHeight);
 }
 -(void)viewDidLoad {
 	%orig;
 
-	UITableView *tblView = [self valueForKey:@"_table"];
+	UITableView *tblView = self.table;
 
 	self.widgetContainerView = [[SWWidgetContainerView alloc] init];
 	self.widgetContainerView.backgroundColor = UIColor.clearColor;

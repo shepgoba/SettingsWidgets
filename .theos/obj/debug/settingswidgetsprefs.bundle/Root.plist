@@ -26,7 +26,7 @@
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
-			<true/>
+			<false/>
 			<key>defaults</key>
 			<string>com.shepgoba.settingswidgetsprefs</string>
 			<key>key</key>
@@ -249,7 +249,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>SettingsWidgets v1.2.1</string>
+			<string>SettingsWidgets v1.2.3</string>
 		</dict>
 	</array>
 	<key>title</key>

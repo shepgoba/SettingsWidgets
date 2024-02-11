@@ -1,5 +1,6 @@
 include $(THEOS)/makefiles/common.mk
-TARGET = iphone:clang:11.2:11.0
+export THEOS_PACKAGE_SCHEME=rootless
+TARGET = iphone:clang:16.5:14.0
 BUNDLE_NAME = settingswidgetsprefs
 
 settingswidgetsprefs_FILES = SWPRootListController.m

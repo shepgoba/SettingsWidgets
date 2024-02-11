@@ -1,5 +1,6 @@
 #import "SWWidgetView.h"
 #import <objc/runtime.h>
+#import <rootless.h>
 
 @interface PSURLManager : NSObject
 + (id)sharedManager;
@@ -14,7 +15,7 @@
     return self;
 }
 -(void)setup {
-	NSBundle *tweakBundle = [[NSBundle alloc] initWithPath:@"/Library/Application Support/SettingsWidgets"];
+	NSBundle *tweakBundle = [[NSBundle alloc] initWithPath:@ROOT_PATH("/Library/Application Support/SettingsWidgets")];
 	NSString *imagePath = [tweakBundle pathForResource:self.iconImage ofType:@"png"];
 	UIImage *storageIconImage = [UIImage imageWithContentsOfFile:imagePath];
 	UIImage *storageIconImageScaled =  [UIImage imageWithCGImage:[storageIconImage CGImage] scale:(storageIconImage.scale * 3) orientation:(storageIconImage.imageOrientation)];

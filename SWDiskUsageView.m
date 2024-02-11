@@ -39,7 +39,7 @@ static inline double GBFromBytes(double bytes)
     _diskBarView.translatesAutoresizingMaskIntoConstraints = NO;
 
     _usageLabel = [UILabel new];
-    _usageLabel.text = @"00 GB / 000 GB";
+    _usageLabel.text = @"-- GB / --- GB";
     _usageLabel.textAlignment = NSTextAlignmentCenter;
     _usageLabel.font = [UIFont boldSystemFontOfSize:9];
     _usageLabel.translatesAutoresizingMaskIntoConstraints = NO;
