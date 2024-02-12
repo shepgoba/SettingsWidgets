@@ -15,11 +15,13 @@
 @property (assign,nonatomic) unsigned long long cellularHome;                 //@synthesize cellularHome=_cellularHome - In the implementation block
 @property (assign,nonatomic) unsigned long long cellularRoaming;              //@synthesize cellularRoaming=_cellularRoaming - In the implementation block
 @property (assign,nonatomic) unsigned long long wifi;                         //@synthesize wifi=_wifi - In the implementation block
+-(id)safeValueForKey:(NSString *)key;
 @end
 
 @interface CTDeviceDataUsage : NSObject
 - (CTDataUsage *)totalDataUsageForPeriod:(unsigned long long)arg1;
-- (id)totalDataUsedForPeriod:(unsigned long long)arg1;
+- (CTDataUsage *)totalDataUsedForPeriod:(unsigned long long)arg1;
+
 @end
 
 @class CoreTelephonyClient;
@@ -323,21 +325,65 @@ static NSString *getIPAddress() {
 		//[NSNotificationCenter.defaultCenter postNotificationName:@"SWWiFiDataProcessedNotification" object:nil userInfo:data];
 	}
 	if ([self shouldLoadCellularData]) {
-		PSUICoreTelephonyDataCache *dataCache = [objc_getClass("PSUICoreTelephonyDataCache") sharedInstance];
-		CoreTelephonyClient *client = dataCache.client;
+		Class cls = objc_getClass("PSUICoreTelephonyDataCache");
+		BOOL failed = NO;
+		if (!cls)
+			failed = YES;
+		PSUICoreTelephonyDataCache *dataCache = [cls sharedInstance];
+		if (dataCache) {
+			CoreTelephonyClient *client = dataCache.client;
+			if (client) {
+				[client dataUsageForLastPeriods:2 completion:^(CTDeviceDataUsage *dataUsage, NSError *arg2) {
+					BOOL block_failed = NO;
+					if (dataUsage) {
+						CTDataUsage *usage = nil;
+						if ([dataUsage respondsToSelector:@selector(totalDataUsageForPeriod:)])
+						 	usage = [dataUsage totalDataUsageForPeriod:0];
+						else if ([dataUsage respondsToSelector:@selector(totalDataUsedForPeriod:)])
+							usage = [dataUsage totalDataUsedForPeriod:0];
+						else
+							block_failed = YES;
+						if (usage) {
+							unsigned long long actualDataUsageBytes = (unsigned long long)[usage safeValueForKey:@"_cellularHome"] + (unsigned long long)[usage safeValueForKey:@"_cellularRoaming"];
+							//NSLog(@"jew %llu", [usage cellularHome]);
+							dispatch_async(dispatch_get_main_queue(), ^{
+								NSDictionary *data = @{@"cellularUsage": @(actualDataUsageBytes)};
+								if (_widgetType1 == SWWidgetTypeCellular)
+									[_widgetView1 updateForData:data];
+								if (_widgetType2 == SWWidgetTypeCellular)
+									[_widgetView2 updateForData:data];
+							});
+						} else {
+							block_failed = YES;
+						}
+					} else {
+						block_failed = YES;
+					}
 
-		[client dataUsageForLastPeriods:2 completion:^(CTDeviceDataUsage *dataUsage, NSError *arg2) {
-			CTDataUsage *usage = [dataUsage totalDataUsageForPeriod:0];
-			unsigned long long actualDataUsageBytes = usage.cellularHome + usage.cellularRoaming;
-			dispatch_async(dispatch_get_main_queue(), ^{
-				NSDictionary *data = @{@"cellularUsage": @(actualDataUsageBytes)};
-				if (_widgetType1 == SWWidgetTypeCellular)
-					[_widgetView1 updateForData:data];
-				if (_widgetType2 == SWWidgetTypeCellular)
-					[_widgetView2 updateForData:data];
-			});
-	
-		}];
+					if (block_failed) {
+						dispatch_async(dispatch_get_main_queue(), ^{
+							NSDictionary *data = @{@"cellularUsage": @0};
+							if (_widgetType1 == SWWidgetTypeCellular)
+								[_widgetView1 updateForData:data];
+							if (_widgetType2 == SWWidgetTypeCellular)
+								[_widgetView2 updateForData:data];
+						});
+					}
+				}];
+			} else {
+				failed = YES;
+			}
+		} else {
+			failed = YES;
+		}
+
+		if (failed) {
+			NSDictionary *data = @{@"cellularUsage": @0};
+			if (_widgetType1 == SWWidgetTypeCellular)
+				[_widgetView1 updateForData:data];
+			if (_widgetType2 == SWWidgetTypeCellular)
+				[_widgetView2 updateForData:data];
+		}
 	}
 }
 -(void)doNothing {

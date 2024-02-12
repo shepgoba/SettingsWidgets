@@ -6,5 +6,5 @@ Maintainer: shepgoba
 Author: shepgoba
 Section: Tweaks
 Architecture: iphoneos-arm64
-Version: 1.2.3-24+debug
-Installed-Size: 576
+Version: 1.2.3-65+debug
+Installed-Size: 592

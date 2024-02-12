@@ -1,0 +1,15 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/shepgoba/settingswidgets/.theos/obj/debug/arm64/swprefs.bundle/swprefs'
+relocations:
+  - { offsetInCU: 0x1E, offset: 0x1E, size: 0x8, addend: 0x0, symName: '-[SWPRootListController specifiers]', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0x9C }
+  - { offsetInCU: 0x264E, offset: 0x264E, size: 0x8, addend: 0x0, symName: '-[SWPRootListController specifiers]', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0x9C }
+  - { offsetInCU: 0x2684, offset: 0x2684, size: 0x8, addend: 0x0, symName: '-[SWPRootListController viewWillAppear:]', symObjAddr: 0x9C, symBinAddr: 0x409C, symSize: 0xD0 }
+  - { offsetInCU: 0x26D2, offset: 0x26D2, size: 0x8, addend: 0x0, symName: '-[SWPRootListController applySettings]', symObjAddr: 0x16C, symBinAddr: 0x416C, symSize: 0x8C }
+  - { offsetInCU: 0x2720, offset: 0x2720, size: 0x8, addend: 0x0, symName: '-[SWPRootListController setPreferenceValue:specifier:]', symObjAddr: 0x1F8, symBinAddr: 0x41F8, symSize: 0x284 }
+  - { offsetInCU: 0x2792, offset: 0x2792, size: 0x8, addend: 0x0, symName: '-[SWPRootListController openTwitter]', symObjAddr: 0x47C, symBinAddr: 0x447C, symSize: 0x98 }
+  - { offsetInCU: 0x27D2, offset: 0x27D2, size: 0x8, addend: 0x0, symName: '-[SWPRootListController openIconTwitter]', symObjAddr: 0x514, symBinAddr: 0x4514, symSize: 0x98 }
+  - { offsetInCU: 0x2812, offset: 0x2812, size: 0x8, addend: 0x0, symName: '-[SWPRootListController savedSpecifiers]', symObjAddr: 0x5AC, symBinAddr: 0x45AC, symSize: 0x24 }
+  - { offsetInCU: 0x2848, offset: 0x2848, size: 0x8, addend: 0x0, symName: '-[SWPRootListController setSavedSpecifiers:]', symObjAddr: 0x5D0, symBinAddr: 0x45D0, symSize: 0x3C }
+  - { offsetInCU: 0x2886, offset: 0x2886, size: 0x8, addend: 0x0, symName: '-[SWPRootListController .cxx_destruct]', symObjAddr: 0x60C, symBinAddr: 0x460C, symSize: 0x38 }
+...

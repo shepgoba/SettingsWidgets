@@ -58,90 +58,91 @@ relocations:
   - { offsetInCU: 0x1E, offset: 0x973C, size: 0x8, addend: 0x0, symName: '+[SWUtils respringDevice]', symObjAddr: 0x0, symBinAddr: 0x7190, symSize: 0xC4 }
   - { offsetInCU: 0x67, offset: 0x9785, size: 0x8, addend: 0x0, symName: '+[SWUtils respringDevice]', symObjAddr: 0x0, symBinAddr: 0x7190, symSize: 0xC4 }
   - { offsetInCU: 0x1E, offset: 0x9B60, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView intrinsicContentSize]', symObjAddr: 0x0, symBinAddr: 0x7254, symSize: 0x40 }
-  - { offsetInCU: 0x2B, offset: 0x9B6D, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView loadWidgetData]', symObjAddr: 0x1270, symBinAddr: 0x84C4, symSize: 0x3FC }
-  - { offsetInCU: 0x50, offset: 0x9B92, size: 0x8, addend: 0x0, symName: _loadWidgetData.batteryDataToken, symObjAddr: 0xC470, symBinAddr: 0x15218, symSize: 0x0 }
-  - { offsetInCU: 0x65, offset: 0x9BA7, size: 0x8, addend: 0x0, symName: _loadWidgetData.g_maximumCapacityPercent, symObjAddr: 0xC478, symBinAddr: 0x15220, symSize: 0x0 }
-  - { offsetInCU: 0x7B, offset: 0x9BBD, size: 0x8, addend: 0x0, symName: _loadWidgetData.dataToken, symObjAddr: 0xC480, symBinAddr: 0x15228, symSize: 0x0 }
-  - { offsetInCU: 0x91, offset: 0x9BD3, size: 0x8, addend: 0x0, symName: _loadWidgetData.g_totalDiskSpace, symObjAddr: 0xC488, symBinAddr: 0x15230, symSize: 0x0 }
-  - { offsetInCU: 0xA7, offset: 0x9BE9, size: 0x8, addend: 0x0, symName: _loadWidgetData.g_usedDiskSpace, symObjAddr: 0xC490, symBinAddr: 0x15238, symSize: 0x0 }
-  - { offsetInCU: 0x1E4D, offset: 0xB98F, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView intrinsicContentSize]', symObjAddr: 0x0, symBinAddr: 0x7254, symSize: 0x40 }
-  - { offsetInCU: 0x1E83, offset: 0xB9C5, size: 0x8, addend: 0x0, symName: _CGSizeMake, symObjAddr: 0x40, symBinAddr: 0x7294, symSize: 0x2C }
-  - { offsetInCU: 0x1ECB, offset: 0xBA0D, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView setupWidgetsWithType1:type2:transparentBackground:widgetInset:cornerRadius:]', symObjAddr: 0x6C, symBinAddr: 0x72C0, symSize: 0xF24 }
-  - { offsetInCU: 0x1FAF, offset: 0xBAF1, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView shouldLoadBatteryData]', symObjAddr: 0xF90, symBinAddr: 0x81E4, symSize: 0xB8 }
-  - { offsetInCU: 0x1FE5, offset: 0xBB27, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView shouldLoadStorageData]', symObjAddr: 0x1048, symBinAddr: 0x829C, symSize: 0xB8 }
-  - { offsetInCU: 0x201B, offset: 0xBB5D, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView shouldLoadWifiData]', symObjAddr: 0x1100, symBinAddr: 0x8354, symSize: 0xB8 }
-  - { offsetInCU: 0x2051, offset: 0xBB93, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView shouldLoadCellularData]', symObjAddr: 0x11B8, symBinAddr: 0x840C, symSize: 0xB8 }
-  - { offsetInCU: 0x2117, offset: 0xBC59, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke', symObjAddr: 0x166C, symBinAddr: 0x88C0, symSize: 0xB8 }
-  - { offsetInCU: 0x2172, offset: 0xBCB4, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke_2', symObjAddr: 0x1724, symBinAddr: 0x8978, symSize: 0x204 }
-  - { offsetInCU: 0x2215, offset: 0xBD57, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke_3', symObjAddr: 0x1928, symBinAddr: 0x8B7C, symSize: 0x18C }
-  - { offsetInCU: 0x228A, offset: 0xBDCC, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s40r, symObjAddr: 0x1AB4, symBinAddr: 0x8D08, symSize: 0x58 }
-  - { offsetInCU: 0x22AE, offset: 0xBDF0, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s40r, symObjAddr: 0x1B0C, symBinAddr: 0x8D60, symSize: 0x40 }
-  - { offsetInCU: 0x22CA, offset: 0xBE0C, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s, symObjAddr: 0x1B4C, symBinAddr: 0x8DA0, symSize: 0x38 }
-  - { offsetInCU: 0x22EE, offset: 0xBE30, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s, symObjAddr: 0x1B84, symBinAddr: 0x8DD8, symSize: 0x2C }
-  - { offsetInCU: 0x230A, offset: 0xBE4C, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke.20', symObjAddr: 0x1BB0, symBinAddr: 0x8E04, symSize: 0xB8 }
-  - { offsetInCU: 0x234A, offset: 0xBE8C, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke_2.21', symObjAddr: 0x1C68, symBinAddr: 0x8EBC, symSize: 0x1E8 }
-  - { offsetInCU: 0x23E9, offset: 0xBF2B, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke_3.29', symObjAddr: 0x1E50, symBinAddr: 0x90A4, symSize: 0x1AC }
-  - { offsetInCU: 0x2447, offset: 0xBF89, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke_4', symObjAddr: 0x1FFC, symBinAddr: 0x9250, symSize: 0x164 }
-  - { offsetInCU: 0x24E6, offset: 0xC028, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke_5', symObjAddr: 0x2160, symBinAddr: 0x93B4, symSize: 0x168 }
-  - { offsetInCU: 0x2555, offset: 0xC097, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView doNothing]', symObjAddr: 0x22C8, symBinAddr: 0x951C, symSize: 0x14 }
-  - { offsetInCU: 0x2588, offset: 0xC0CA, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView setWidgetBackgrounds]', symObjAddr: 0x22DC, symBinAddr: 0x9530, symSize: 0x22C }
-  - { offsetInCU: 0x25BB, offset: 0xC0FD, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView .cxx_destruct]', symObjAddr: 0x2508, symBinAddr: 0x975C, symSize: 0x58 }
-  - { offsetInCU: 0x25ED, offset: 0xC12F, size: 0x8, addend: 0x0, symName: _getIPAddress, symObjAddr: 0x2560, symBinAddr: 0x97B4, symSize: 0x174 }
-  - { offsetInCU: 0x1E, offset: 0xCAA8, size: 0x8, addend: 0x0, symName: '-[SWWidgetView init]', symObjAddr: 0x0, symBinAddr: 0x9928, symSize: 0xBC }
-  - { offsetInCU: 0x2B, offset: 0xCAB5, size: 0x8, addend: 0x0, symName: '-[SWWidgetView openPrefsURL]', symObjAddr: 0x864, symBinAddr: 0xA18C, symSize: 0x100 }
-  - { offsetInCU: 0x50, offset: 0xCADA, size: 0x8, addend: 0x0, symName: _openPrefsURL.managerClass, symObjAddr: 0x7D68, symBinAddr: 0x15240, symSize: 0x0 }
-  - { offsetInCU: 0x1C47, offset: 0xE6D1, size: 0x8, addend: 0x0, symName: '-[SWWidgetView init]', symObjAddr: 0x0, symBinAddr: 0x9928, symSize: 0xBC }
-  - { offsetInCU: 0x1C7D, offset: 0xE707, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setup]', symObjAddr: 0xBC, symBinAddr: 0x99E4, symSize: 0x7A8 }
-  - { offsetInCU: 0x1CE7, offset: 0xE771, size: 0x8, addend: 0x0, symName: '-[SWWidgetView additionalSetup]', symObjAddr: 0x964, symBinAddr: 0xA28C, symSize: 0x14 }
-  - { offsetInCU: 0x1D19, offset: 0xE7A3, size: 0x8, addend: 0x0, symName: '-[SWWidgetView updateForBigWidgetView]', symObjAddr: 0x978, symBinAddr: 0xA2A0, symSize: 0x14 }
-  - { offsetInCU: 0x1D4B, offset: 0xE7D5, size: 0x8, addend: 0x0, symName: '-[SWWidgetView updateForData:]', symObjAddr: 0x98C, symBinAddr: 0xA2B4, symSize: 0x4C }
-  - { offsetInCU: 0x1D8B, offset: 0xE815, size: 0x8, addend: 0x0, symName: '-[SWWidgetView widgetHeaderLabel]', symObjAddr: 0x9D8, symBinAddr: 0xA300, symSize: 0x24 }
-  - { offsetInCU: 0x1DC1, offset: 0xE84B, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setWidgetHeaderLabel:]', symObjAddr: 0x9FC, symBinAddr: 0xA324, symSize: 0x3C }
-  - { offsetInCU: 0x1DFF, offset: 0xE889, size: 0x8, addend: 0x0, symName: '-[SWWidgetView widgetIconImageView]', symObjAddr: 0xA38, symBinAddr: 0xA360, symSize: 0x24 }
-  - { offsetInCU: 0x1E35, offset: 0xE8BF, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setWidgetIconImageView:]', symObjAddr: 0xA5C, symBinAddr: 0xA384, symSize: 0x3C }
-  - { offsetInCU: 0x1E73, offset: 0xE8FD, size: 0x8, addend: 0x0, symName: '-[SWWidgetView iconImage]', symObjAddr: 0xA98, symBinAddr: 0xA3C0, symSize: 0x24 }
-  - { offsetInCU: 0x1EA9, offset: 0xE933, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setIconImage:]', symObjAddr: 0xABC, symBinAddr: 0xA3E4, symSize: 0x3C }
-  - { offsetInCU: 0x1EE7, offset: 0xE971, size: 0x8, addend: 0x0, symName: '-[SWWidgetView widgetHeaderLocalizationString]', symObjAddr: 0xAF8, symBinAddr: 0xA420, symSize: 0x24 }
-  - { offsetInCU: 0x1F1D, offset: 0xE9A7, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setWidgetHeaderLocalizationString:]', symObjAddr: 0xB1C, symBinAddr: 0xA444, symSize: 0x3C }
-  - { offsetInCU: 0x1F5B, offset: 0xE9E5, size: 0x8, addend: 0x0, symName: '-[SWWidgetView prefsURL]', symObjAddr: 0xB58, symBinAddr: 0xA480, symSize: 0x24 }
-  - { offsetInCU: 0x1F91, offset: 0xEA1B, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setPrefsURL:]', symObjAddr: 0xB7C, symBinAddr: 0xA4A4, symSize: 0x3C }
-  - { offsetInCU: 0x1FCF, offset: 0xEA59, size: 0x8, addend: 0x0, symName: '-[SWWidgetView hasPrefsURL]', symObjAddr: 0xBB8, symBinAddr: 0xA4E0, symSize: 0x2C }
-  - { offsetInCU: 0x2005, offset: 0xEA8F, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setHasPrefsURL:]', symObjAddr: 0xBE4, symBinAddr: 0xA50C, symSize: 0x38 }
-  - { offsetInCU: 0x2043, offset: 0xEACD, size: 0x8, addend: 0x0, symName: '-[SWWidgetView .cxx_destruct]', symObjAddr: 0xC1C, symBinAddr: 0xA544, symSize: 0xA0 }
-  - { offsetInCU: 0x1E, offset: 0xECB2, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView iconImage]', symObjAddr: 0x0, symBinAddr: 0xA5E4, symSize: 0x1C }
-  - { offsetInCU: 0x1BDC, offset: 0x10870, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView iconImage]', symObjAddr: 0x0, symBinAddr: 0xA5E4, symSize: 0x1C }
-  - { offsetInCU: 0x1C12, offset: 0x108A6, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView widgetHeaderLocalizationString]', symObjAddr: 0x1C, symBinAddr: 0xA600, symSize: 0x1C }
-  - { offsetInCU: 0x1C48, offset: 0x108DC, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView prefsURL]', symObjAddr: 0x38, symBinAddr: 0xA61C, symSize: 0x1C }
-  - { offsetInCU: 0x1C7E, offset: 0x10912, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView additionalSetup]', symObjAddr: 0x54, symBinAddr: 0xA638, symSize: 0x318 }
-  - { offsetInCU: 0x1CB0, offset: 0x10944, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView updateForData:]', symObjAddr: 0x36C, symBinAddr: 0xA950, symSize: 0x108 }
-  - { offsetInCU: 0x1D0C, offset: 0x109A0, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView ipAddressLabel]', symObjAddr: 0x474, symBinAddr: 0xAA58, symSize: 0x24 }
-  - { offsetInCU: 0x1D42, offset: 0x109D6, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView setIpAddressLabel:]', symObjAddr: 0x498, symBinAddr: 0xAA7C, symSize: 0x3C }
-  - { offsetInCU: 0x1D80, offset: 0x10A14, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView .cxx_destruct]', symObjAddr: 0x4D4, symBinAddr: 0xAAB8, symSize: 0x38 }
-  - { offsetInCU: 0x1E, offset: 0x10A81, size: 0x8, addend: 0x0, symName: _localizedStringForKey, symObjAddr: 0x0, symBinAddr: 0xAAF0, symSize: 0xC0 }
-  - { offsetInCU: 0x2B, offset: 0x10A8E, size: 0x8, addend: 0x0, symName: _localizedStringForKey, symObjAddr: 0x0, symBinAddr: 0xAAF0, symSize: 0xC0 }
-  - { offsetInCU: 0x50, offset: 0x10AB3, size: 0x8, addend: 0x0, symName: _localizedStringForKey.tweakBundle, symObjAddr: 0x1110, symBinAddr: 0x15248, symSize: 0x0 }
-  - { offsetInCU: 0x1E, offset: 0x1100D, size: 0x8, addend: 0x0, symName: ___isOSVersionAtLeast, symObjAddr: 0x0, symBinAddr: 0xABB0, symSize: 0xB8 }
-  - { offsetInCU: 0x4A, offset: 0x11039, size: 0x8, addend: 0x0, symName: __ZL15transparentMode, symObjAddr: 0xA228, symBinAddr: 0x15270, symSize: 0x0 }
-  - { offsetInCU: 0x75, offset: 0x11064, size: 0x8, addend: 0x0, symName: __ZL11widgetType1, symObjAddr: 0xA230, symBinAddr: 0x15278, symSize: 0x0 }
-  - { offsetInCU: 0xAB, offset: 0x1109A, size: 0x8, addend: 0x0, symName: __ZL11widgetType2, symObjAddr: 0xA238, symBinAddr: 0x15280, symSize: 0x0 }
-  - { offsetInCU: 0xC4, offset: 0x110B3, size: 0x8, addend: 0x0, symName: __ZL12widgetHeight, symObjAddr: 0xA240, symBinAddr: 0x15288, symSize: 0x0 }
-  - { offsetInCU: 0xE4, offset: 0x110D3, size: 0x8, addend: 0x0, symName: __ZL11widgetInset, symObjAddr: 0xA244, symBinAddr: 0x1528C, symSize: 0x0 }
-  - { offsetInCU: 0xFD, offset: 0x110EC, size: 0x8, addend: 0x0, symName: __ZL14widget2Enabled, symObjAddr: 0xA248, symBinAddr: 0x15290, symSize: 0x0 }
-  - { offsetInCU: 0x116, offset: 0x11105, size: 0x8, addend: 0x0, symName: __ZL18widgetCornerRadius, symObjAddr: 0xA24C, symBinAddr: 0x15294, symSize: 0x0 }
-  - { offsetInCU: 0x12F, offset: 0x1111E, size: 0x8, addend: 0x0, symName: __ZL7enabled, symObjAddr: 0xA208, symBinAddr: 0x15250, symSize: 0x0 }
-  - { offsetInCU: 0x148, offset: 0x11137, size: 0x8, addend: 0x0, symName: '__ZL57_logos_orig$Tweak$PSUIPrefsListController$viewWillAppear$', symObjAddr: 0xA210, symBinAddr: 0x15258, symSize: 0x0 }
-  - { offsetInCU: 0x28A4, offset: 0x13893, size: 0x8, addend: 0x0, symName: '__ZL53_logos_orig$Tweak$PSUIPrefsListController$viewDidLoad', symObjAddr: 0xA218, symBinAddr: 0x15260, symSize: 0x0 }
-  - { offsetInCU: 0x28CE, offset: 0x138BD, size: 0x8, addend: 0x0, symName: '__ZL67_logos_orig$Tweak$PSUIPrefsListController$traitCollectionDidChange$', symObjAddr: 0xA220, symBinAddr: 0x15268, symSize: 0x0 }
-  - { offsetInCU: 0x28F1, offset: 0x138E0, size: 0x8, addend: 0x0, symName: ___isOSVersionAtLeast, symObjAddr: 0x0, symBinAddr: 0xABB0, symSize: 0xB8 }
-  - { offsetInCU: 0x2943, offset: 0x13932, size: 0x8, addend: 0x0, symName: '__ZL65_logos_property$Tweak$PSUIPrefsListController$widgetContainerViewP23PSUIPrefsListControllerP13objc_selector', symObjAddr: 0xB8, symBinAddr: 0xAC68, symSize: 0x98 }
-  - { offsetInCU: 0x297D, offset: 0x1396C, size: 0x8, addend: 0x0, symName: '__ZL68_logos_property$Tweak$PSUIPrefsListController$setWidgetContainerViewP23PSUIPrefsListControllerP13objc_selectorP21SWWidgetContainerView', symObjAddr: 0x150, symBinAddr: 0xAD00, symSize: 0xBC }
-  - { offsetInCU: 0x29C1, offset: 0x139B0, size: 0x8, addend: 0x0, symName: __ZL24_logosLocalCtor_7c1a0202iPPcS0_, symObjAddr: 0x20C, symBinAddr: 0xADBC, symSize: 0x270 }
-  - { offsetInCU: 0x2A6A, offset: 0x13A59, size: 0x8, addend: 0x0, symName: __ZL9loadPrefsv, symObjAddr: 0x47C, symBinAddr: 0xB02C, symSize: 0x228 }
-  - { offsetInCU: 0x2A92, offset: 0x13A81, size: 0x8, addend: 0x0, symName: '__ZL59_logos_method$Tweak$PSUIPrefsListController$viewWillAppear$P23PSUIPrefsListControllerP13objc_selectorb', symObjAddr: 0x6A4, symBinAddr: 0xB254, symSize: 0x1E8 }
-  - { offsetInCU: 0x2AE4, offset: 0x13AD3, size: 0x8, addend: 0x0, symName: '__ZL55_logos_method$Tweak$PSUIPrefsListController$viewDidLoadP23PSUIPrefsListControllerP13objc_selector', symObjAddr: 0x88C, symBinAddr: 0xB43C, symSize: 0x2C0 }
-  - { offsetInCU: 0x2B28, offset: 0x13B17, size: 0x8, addend: 0x0, symName: '__ZL69_logos_method$Tweak$PSUIPrefsListController$traitCollectionDidChange$P23PSUIPrefsListControllerP13objc_selectorP17UITraitCollection', symObjAddr: 0xB4C, symBinAddr: 0xB6FC, symSize: 0xD8 }
-  - { offsetInCU: 0x2B6C, offset: 0x13B5B, size: 0x8, addend: 0x0, symName: __ZL10boolForKeyP12NSDictionaryP8NSStringb, symObjAddr: 0xC24, symBinAddr: 0xB7D4, symSize: 0x164 }
-  - { offsetInCU: 0x2BC2, offset: 0x13BB1, size: 0x8, addend: 0x0, symName: __ZL16widgetTypeForKeyP12NSDictionaryP8NSStringm, symObjAddr: 0xD88, symBinAddr: 0xB938, symSize: 0x148 }
-  - { offsetInCU: 0x2C18, offset: 0x13C07, size: 0x8, addend: 0x0, symName: __ZL9intForKeyP12NSDictionaryP8NSStringx, symObjAddr: 0xED0, symBinAddr: 0xBA80, symSize: 0x148 }
-  - { offsetInCU: 0x2C6E, offset: 0x13C5D, size: 0x8, addend: 0x0, symName: __ZL10CGRectMakedddd, symObjAddr: 0x1018, symBinAddr: 0xBBC8, symSize: 0x4C }
+  - { offsetInCU: 0x2B, offset: 0x9B6D, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView loadWidgetData]', symObjAddr: 0x1270, symBinAddr: 0x84C4, symSize: 0x508 }
+  - { offsetInCU: 0x50, offset: 0x9B92, size: 0x8, addend: 0x0, symName: _loadWidgetData.batteryDataToken, symObjAddr: 0xCD48, symBinAddr: 0x15218, symSize: 0x0 }
+  - { offsetInCU: 0x66, offset: 0x9BA8, size: 0x8, addend: 0x0, symName: _loadWidgetData.g_maximumCapacityPercent, symObjAddr: 0xCD50, symBinAddr: 0x15220, symSize: 0x0 }
+  - { offsetInCU: 0x7C, offset: 0x9BBE, size: 0x8, addend: 0x0, symName: _loadWidgetData.dataToken, symObjAddr: 0xCD58, symBinAddr: 0x15228, symSize: 0x0 }
+  - { offsetInCU: 0x92, offset: 0x9BD4, size: 0x8, addend: 0x0, symName: _loadWidgetData.g_totalDiskSpace, symObjAddr: 0xCD60, symBinAddr: 0x15230, symSize: 0x0 }
+  - { offsetInCU: 0xA8, offset: 0x9BEA, size: 0x8, addend: 0x0, symName: _loadWidgetData.g_usedDiskSpace, symObjAddr: 0xCD68, symBinAddr: 0x15238, symSize: 0x0 }
+  - { offsetInCU: 0x1E8B, offset: 0xB9CD, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView intrinsicContentSize]', symObjAddr: 0x0, symBinAddr: 0x7254, symSize: 0x40 }
+  - { offsetInCU: 0x1EC1, offset: 0xBA03, size: 0x8, addend: 0x0, symName: _CGSizeMake, symObjAddr: 0x40, symBinAddr: 0x7294, symSize: 0x2C }
+  - { offsetInCU: 0x1F09, offset: 0xBA4B, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView setupWidgetsWithType1:type2:transparentBackground:widgetInset:cornerRadius:]', symObjAddr: 0x6C, symBinAddr: 0x72C0, symSize: 0xF24 }
+  - { offsetInCU: 0x1FED, offset: 0xBB2F, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView shouldLoadBatteryData]', symObjAddr: 0xF90, symBinAddr: 0x81E4, symSize: 0xB8 }
+  - { offsetInCU: 0x2023, offset: 0xBB65, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView shouldLoadStorageData]', symObjAddr: 0x1048, symBinAddr: 0x829C, symSize: 0xB8 }
+  - { offsetInCU: 0x2059, offset: 0xBB9B, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView shouldLoadWifiData]', symObjAddr: 0x1100, symBinAddr: 0x8354, symSize: 0xB8 }
+  - { offsetInCU: 0x208F, offset: 0xBBD1, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView shouldLoadCellularData]', symObjAddr: 0x11B8, symBinAddr: 0x840C, symSize: 0xB8 }
+  - { offsetInCU: 0x2155, offset: 0xBC97, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke', symObjAddr: 0x1778, symBinAddr: 0x89CC, symSize: 0xB8 }
+  - { offsetInCU: 0x21B2, offset: 0xBCF4, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke_2', symObjAddr: 0x1830, symBinAddr: 0x8A84, symSize: 0x204 }
+  - { offsetInCU: 0x2255, offset: 0xBD97, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke_3', symObjAddr: 0x1A34, symBinAddr: 0x8C88, symSize: 0x18C }
+  - { offsetInCU: 0x22CA, offset: 0xBE0C, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s40r, symObjAddr: 0x1BC0, symBinAddr: 0x8E14, symSize: 0x58 }
+  - { offsetInCU: 0x22EE, offset: 0xBE30, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s40r, symObjAddr: 0x1C18, symBinAddr: 0x8E6C, symSize: 0x40 }
+  - { offsetInCU: 0x230A, offset: 0xBE4C, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s, symObjAddr: 0x1C58, symBinAddr: 0x8EAC, symSize: 0x38 }
+  - { offsetInCU: 0x232E, offset: 0xBE70, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s, symObjAddr: 0x1C90, symBinAddr: 0x8EE4, symSize: 0x2C }
+  - { offsetInCU: 0x234A, offset: 0xBE8C, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke.20', symObjAddr: 0x1CBC, symBinAddr: 0x8F10, symSize: 0xB8 }
+  - { offsetInCU: 0x238A, offset: 0xBECC, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke_2.21', symObjAddr: 0x1D74, symBinAddr: 0x8FC8, symSize: 0x1E8 }
+  - { offsetInCU: 0x2429, offset: 0xBF6B, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke_3.29', symObjAddr: 0x1F5C, symBinAddr: 0x91B0, symSize: 0x1AC }
+  - { offsetInCU: 0x2487, offset: 0xBFC9, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke_4', symObjAddr: 0x2108, symBinAddr: 0x935C, symSize: 0x2EC }
+  - { offsetInCU: 0x2557, offset: 0xC099, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke_5', symObjAddr: 0x23F4, symBinAddr: 0x9648, symSize: 0x168 }
+  - { offsetInCU: 0x25C6, offset: 0xC108, size: 0x8, addend: 0x0, symName: '___39-[SWWidgetContainerView loadWidgetData]_block_invoke.47', symObjAddr: 0x255C, symBinAddr: 0x97B0, symSize: 0xD8 }
+  - { offsetInCU: 0x2623, offset: 0xC165, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView doNothing]', symObjAddr: 0x2634, symBinAddr: 0x9888, symSize: 0x14 }
+  - { offsetInCU: 0x2656, offset: 0xC198, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView setWidgetBackgrounds]', symObjAddr: 0x2648, symBinAddr: 0x989C, symSize: 0x22C }
+  - { offsetInCU: 0x2689, offset: 0xC1CB, size: 0x8, addend: 0x0, symName: '-[SWWidgetContainerView .cxx_destruct]', symObjAddr: 0x2874, symBinAddr: 0x9AC8, symSize: 0x58 }
+  - { offsetInCU: 0x26BB, offset: 0xC1FD, size: 0x8, addend: 0x0, symName: _getIPAddress, symObjAddr: 0x28CC, symBinAddr: 0x9B20, symSize: 0x174 }
+  - { offsetInCU: 0x1E, offset: 0xCBE4, size: 0x8, addend: 0x0, symName: '-[SWWidgetView init]', symObjAddr: 0x0, symBinAddr: 0x9C94, symSize: 0xBC }
+  - { offsetInCU: 0x2B, offset: 0xCBF1, size: 0x8, addend: 0x0, symName: '-[SWWidgetView openPrefsURL]', symObjAddr: 0x864, symBinAddr: 0xA4F8, symSize: 0x100 }
+  - { offsetInCU: 0x50, offset: 0xCC16, size: 0x8, addend: 0x0, symName: _openPrefsURL.managerClass, symObjAddr: 0x7D68, symBinAddr: 0x15240, symSize: 0x0 }
+  - { offsetInCU: 0x1C47, offset: 0xE80D, size: 0x8, addend: 0x0, symName: '-[SWWidgetView init]', symObjAddr: 0x0, symBinAddr: 0x9C94, symSize: 0xBC }
+  - { offsetInCU: 0x1C7D, offset: 0xE843, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setup]', symObjAddr: 0xBC, symBinAddr: 0x9D50, symSize: 0x7A8 }
+  - { offsetInCU: 0x1CE7, offset: 0xE8AD, size: 0x8, addend: 0x0, symName: '-[SWWidgetView additionalSetup]', symObjAddr: 0x964, symBinAddr: 0xA5F8, symSize: 0x14 }
+  - { offsetInCU: 0x1D19, offset: 0xE8DF, size: 0x8, addend: 0x0, symName: '-[SWWidgetView updateForBigWidgetView]', symObjAddr: 0x978, symBinAddr: 0xA60C, symSize: 0x14 }
+  - { offsetInCU: 0x1D4B, offset: 0xE911, size: 0x8, addend: 0x0, symName: '-[SWWidgetView updateForData:]', symObjAddr: 0x98C, symBinAddr: 0xA620, symSize: 0x4C }
+  - { offsetInCU: 0x1D8B, offset: 0xE951, size: 0x8, addend: 0x0, symName: '-[SWWidgetView widgetHeaderLabel]', symObjAddr: 0x9D8, symBinAddr: 0xA66C, symSize: 0x24 }
+  - { offsetInCU: 0x1DC1, offset: 0xE987, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setWidgetHeaderLabel:]', symObjAddr: 0x9FC, symBinAddr: 0xA690, symSize: 0x3C }
+  - { offsetInCU: 0x1DFF, offset: 0xE9C5, size: 0x8, addend: 0x0, symName: '-[SWWidgetView widgetIconImageView]', symObjAddr: 0xA38, symBinAddr: 0xA6CC, symSize: 0x24 }
+  - { offsetInCU: 0x1E35, offset: 0xE9FB, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setWidgetIconImageView:]', symObjAddr: 0xA5C, symBinAddr: 0xA6F0, symSize: 0x3C }
+  - { offsetInCU: 0x1E73, offset: 0xEA39, size: 0x8, addend: 0x0, symName: '-[SWWidgetView iconImage]', symObjAddr: 0xA98, symBinAddr: 0xA72C, symSize: 0x24 }
+  - { offsetInCU: 0x1EA9, offset: 0xEA6F, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setIconImage:]', symObjAddr: 0xABC, symBinAddr: 0xA750, symSize: 0x3C }
+  - { offsetInCU: 0x1EE7, offset: 0xEAAD, size: 0x8, addend: 0x0, symName: '-[SWWidgetView widgetHeaderLocalizationString]', symObjAddr: 0xAF8, symBinAddr: 0xA78C, symSize: 0x24 }
+  - { offsetInCU: 0x1F1D, offset: 0xEAE3, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setWidgetHeaderLocalizationString:]', symObjAddr: 0xB1C, symBinAddr: 0xA7B0, symSize: 0x3C }
+  - { offsetInCU: 0x1F5B, offset: 0xEB21, size: 0x8, addend: 0x0, symName: '-[SWWidgetView prefsURL]', symObjAddr: 0xB58, symBinAddr: 0xA7EC, symSize: 0x24 }
+  - { offsetInCU: 0x1F91, offset: 0xEB57, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setPrefsURL:]', symObjAddr: 0xB7C, symBinAddr: 0xA810, symSize: 0x3C }
+  - { offsetInCU: 0x1FCF, offset: 0xEB95, size: 0x8, addend: 0x0, symName: '-[SWWidgetView hasPrefsURL]', symObjAddr: 0xBB8, symBinAddr: 0xA84C, symSize: 0x2C }
+  - { offsetInCU: 0x2005, offset: 0xEBCB, size: 0x8, addend: 0x0, symName: '-[SWWidgetView setHasPrefsURL:]', symObjAddr: 0xBE4, symBinAddr: 0xA878, symSize: 0x38 }
+  - { offsetInCU: 0x2043, offset: 0xEC09, size: 0x8, addend: 0x0, symName: '-[SWWidgetView .cxx_destruct]', symObjAddr: 0xC1C, symBinAddr: 0xA8B0, symSize: 0xA0 }
+  - { offsetInCU: 0x1E, offset: 0xEDEE, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView iconImage]', symObjAddr: 0x0, symBinAddr: 0xA950, symSize: 0x1C }
+  - { offsetInCU: 0x1BDC, offset: 0x109AC, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView iconImage]', symObjAddr: 0x0, symBinAddr: 0xA950, symSize: 0x1C }
+  - { offsetInCU: 0x1C12, offset: 0x109E2, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView widgetHeaderLocalizationString]', symObjAddr: 0x1C, symBinAddr: 0xA96C, symSize: 0x1C }
+  - { offsetInCU: 0x1C48, offset: 0x10A18, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView prefsURL]', symObjAddr: 0x38, symBinAddr: 0xA988, symSize: 0x1C }
+  - { offsetInCU: 0x1C7E, offset: 0x10A4E, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView additionalSetup]', symObjAddr: 0x54, symBinAddr: 0xA9A4, symSize: 0x318 }
+  - { offsetInCU: 0x1CB0, offset: 0x10A80, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView updateForData:]', symObjAddr: 0x36C, symBinAddr: 0xACBC, symSize: 0x108 }
+  - { offsetInCU: 0x1D0C, offset: 0x10ADC, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView ipAddressLabel]', symObjAddr: 0x474, symBinAddr: 0xADC4, symSize: 0x24 }
+  - { offsetInCU: 0x1D42, offset: 0x10B12, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView setIpAddressLabel:]', symObjAddr: 0x498, symBinAddr: 0xADE8, symSize: 0x3C }
+  - { offsetInCU: 0x1D80, offset: 0x10B50, size: 0x8, addend: 0x0, symName: '-[SWWifiWidgetView .cxx_destruct]', symObjAddr: 0x4D4, symBinAddr: 0xAE24, symSize: 0x38 }
+  - { offsetInCU: 0x1E, offset: 0x10BBD, size: 0x8, addend: 0x0, symName: _localizedStringForKey, symObjAddr: 0x0, symBinAddr: 0xAE5C, symSize: 0xC0 }
+  - { offsetInCU: 0x2B, offset: 0x10BCA, size: 0x8, addend: 0x0, symName: _localizedStringForKey, symObjAddr: 0x0, symBinAddr: 0xAE5C, symSize: 0xC0 }
+  - { offsetInCU: 0x50, offset: 0x10BEF, size: 0x8, addend: 0x0, symName: _localizedStringForKey.tweakBundle, symObjAddr: 0x1110, symBinAddr: 0x15248, symSize: 0x0 }
+  - { offsetInCU: 0x1E, offset: 0x11149, size: 0x8, addend: 0x0, symName: ___isOSVersionAtLeast, symObjAddr: 0x0, symBinAddr: 0xAF1C, symSize: 0xB8 }
+  - { offsetInCU: 0x4A, offset: 0x11175, size: 0x8, addend: 0x0, symName: __ZL15transparentMode, symObjAddr: 0xA3F0, symBinAddr: 0x15270, symSize: 0x0 }
+  - { offsetInCU: 0x75, offset: 0x111A0, size: 0x8, addend: 0x0, symName: __ZL11widgetType1, symObjAddr: 0xA3F8, symBinAddr: 0x15278, symSize: 0x0 }
+  - { offsetInCU: 0xAB, offset: 0x111D6, size: 0x8, addend: 0x0, symName: __ZL11widgetType2, symObjAddr: 0xA400, symBinAddr: 0x15280, symSize: 0x0 }
+  - { offsetInCU: 0xC4, offset: 0x111EF, size: 0x8, addend: 0x0, symName: __ZL12widgetHeight, symObjAddr: 0xA408, symBinAddr: 0x15288, symSize: 0x0 }
+  - { offsetInCU: 0xE4, offset: 0x1120F, size: 0x8, addend: 0x0, symName: __ZL11widgetInset, symObjAddr: 0xA40C, symBinAddr: 0x1528C, symSize: 0x0 }
+  - { offsetInCU: 0xFD, offset: 0x11228, size: 0x8, addend: 0x0, symName: __ZL14widget2Enabled, symObjAddr: 0xA410, symBinAddr: 0x15290, symSize: 0x0 }
+  - { offsetInCU: 0x116, offset: 0x11241, size: 0x8, addend: 0x0, symName: __ZL18widgetCornerRadius, symObjAddr: 0xA414, symBinAddr: 0x15294, symSize: 0x0 }
+  - { offsetInCU: 0x12F, offset: 0x1125A, size: 0x8, addend: 0x0, symName: __ZL7enabled, symObjAddr: 0xA3D0, symBinAddr: 0x15250, symSize: 0x0 }
+  - { offsetInCU: 0x148, offset: 0x11273, size: 0x8, addend: 0x0, symName: '__ZL57_logos_orig$Tweak$PSUIPrefsListController$viewWillAppear$', symObjAddr: 0xA3D8, symBinAddr: 0x15258, symSize: 0x0 }
+  - { offsetInCU: 0x28A4, offset: 0x139CF, size: 0x8, addend: 0x0, symName: '__ZL53_logos_orig$Tweak$PSUIPrefsListController$viewDidLoad', symObjAddr: 0xA3E0, symBinAddr: 0x15260, symSize: 0x0 }
+  - { offsetInCU: 0x28CE, offset: 0x139F9, size: 0x8, addend: 0x0, symName: '__ZL67_logos_orig$Tweak$PSUIPrefsListController$traitCollectionDidChange$', symObjAddr: 0xA3E8, symBinAddr: 0x15268, symSize: 0x0 }
+  - { offsetInCU: 0x28F1, offset: 0x13A1C, size: 0x8, addend: 0x0, symName: ___isOSVersionAtLeast, symObjAddr: 0x0, symBinAddr: 0xAF1C, symSize: 0xB8 }
+  - { offsetInCU: 0x2943, offset: 0x13A6E, size: 0x8, addend: 0x0, symName: '__ZL65_logos_property$Tweak$PSUIPrefsListController$widgetContainerViewP23PSUIPrefsListControllerP13objc_selector', symObjAddr: 0xB8, symBinAddr: 0xAFD4, symSize: 0x98 }
+  - { offsetInCU: 0x297D, offset: 0x13AA8, size: 0x8, addend: 0x0, symName: '__ZL68_logos_property$Tweak$PSUIPrefsListController$setWidgetContainerViewP23PSUIPrefsListControllerP13objc_selectorP21SWWidgetContainerView', symObjAddr: 0x150, symBinAddr: 0xB06C, symSize: 0xBC }
+  - { offsetInCU: 0x29C1, offset: 0x13AEC, size: 0x8, addend: 0x0, symName: __ZL24_logosLocalCtor_7c1a0202iPPcS0_, symObjAddr: 0x20C, symBinAddr: 0xB128, symSize: 0x27C }
+  - { offsetInCU: 0x2A6A, offset: 0x13B95, size: 0x8, addend: 0x0, symName: __ZL9loadPrefsv, symObjAddr: 0x488, symBinAddr: 0xB3A4, symSize: 0x218 }
+  - { offsetInCU: 0x2AA0, offset: 0x13BCB, size: 0x8, addend: 0x0, symName: '__ZL59_logos_method$Tweak$PSUIPrefsListController$viewWillAppear$P23PSUIPrefsListControllerP13objc_selectorb', symObjAddr: 0x6A0, symBinAddr: 0xB5BC, symSize: 0x1E8 }
+  - { offsetInCU: 0x2AF2, offset: 0x13C1D, size: 0x8, addend: 0x0, symName: '__ZL55_logos_method$Tweak$PSUIPrefsListController$viewDidLoadP23PSUIPrefsListControllerP13objc_selector', symObjAddr: 0x888, symBinAddr: 0xB7A4, symSize: 0x2C0 }
+  - { offsetInCU: 0x2B36, offset: 0x13C61, size: 0x8, addend: 0x0, symName: '__ZL69_logos_method$Tweak$PSUIPrefsListController$traitCollectionDidChange$P23PSUIPrefsListControllerP13objc_selectorP17UITraitCollection', symObjAddr: 0xB48, symBinAddr: 0xBA64, symSize: 0xD8 }
+  - { offsetInCU: 0x2B7A, offset: 0x13CA5, size: 0x8, addend: 0x0, symName: __ZL10boolForKeyP12NSDictionaryP8NSStringb, symObjAddr: 0xC20, symBinAddr: 0xBB3C, symSize: 0x164 }
+  - { offsetInCU: 0x2BD0, offset: 0x13CFB, size: 0x8, addend: 0x0, symName: __ZL16widgetTypeForKeyP12NSDictionaryP8NSStringm, symObjAddr: 0xD84, symBinAddr: 0xBCA0, symSize: 0x148 }
+  - { offsetInCU: 0x2C26, offset: 0x13D51, size: 0x8, addend: 0x0, symName: __ZL9intForKeyP12NSDictionaryP8NSStringx, symObjAddr: 0xECC, symBinAddr: 0xBDE8, symSize: 0x148 }
+  - { offsetInCU: 0x2C7C, offset: 0x13DA7, size: 0x8, addend: 0x0, symName: __ZL10CGRectMakedddd, symObjAddr: 0x1014, symBinAddr: 0xBF30, symSize: 0x4C }
 ...

@@ -68,8 +68,8 @@ static SWWidgetType widgetType2;
 
 
 static void loadPrefs() {
-	NSDictionary *settings = [[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.shepgoba.settingswidgetsprefs"];
-	NSLog(@"jew %@", settings);
+	NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"com.shepgoba.swprefs"];
+	NSDictionary *settings = defaults.dictionaryRepresentation;
 
   	enabled = boolForKey(settings, @"enabled", YES);
 	transparentMode = boolForKey(settings, @"transparentMode", NO);
@@ -122,6 +122,7 @@ static void loadPrefs() {
 %end
 
 %ctor {
+	NSLog(@"SettingsWidgets loaded");
 	loadPrefs();
 	if (enabled)
 		%init(Tweak);
