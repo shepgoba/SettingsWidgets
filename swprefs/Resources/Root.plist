@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Settings</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.shepgoba.swprefs</string>
+			<key>key</key>
+			<string>enabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.shepgoba.swprefs</string>
+			<key>key</key>
+			<string>transparentMode</string>
+			<key>label</key>
+			<string>Transparent Background</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Widget Height</string>
+		</dict>
+		<dict>
+		    <key>cell</key>
+            <string>PSSliderCell</string>
+			<key>default</key>
+			<integer>15</integer>
+			<key>defaults</key>
+			<string>com.shepgoba.swprefs</string>
+			<key>key</key>
+			<string>widgetHeight</string>
+			<key>min</key>
+			<integer>100</integer>
+			<key>max</key>
+			<integer>280</integer>
+			<key>isSegmented</key>
+			<true/>
+			<key>showValue</key>
+			<true/>
+			<key>segmentCount</key>
+			<integer>9</integer>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Widget Inset</string>
+		</dict>
+		<dict>
+		    <key>cell</key>
+            <string>PSSliderCell</string>
+			<key>default</key>
+			<integer>120</integer>
+			<key>defaults</key>
+			<string>com.shepgoba.swprefs</string>
+			<key>key</key>
+			<string>widgetInset</string>
+			<key>min</key>
+			<integer>5</integer>
+			<key>max</key>
+			<integer>25</integer>
+			<key>isSegmented</key>
+			<true/>
+			<key>showValue</key>
+			<true/>
+			<key>segmentCount</key>
+			<integer>8</integer>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Widget Corner Radius</string>
+		</dict>
+		<dict>
+		    <key>cell</key>
+            <string>PSSliderCell</string>
+			<key>default</key>
+			<integer>16</integer>
+			<key>defaults</key>
+			<string>com.shepgoba.swprefs</string>
+			<key>key</key>
+			<string>widgetCornerRadius</string>
+			<key>min</key>
+			<integer>0</integer>
+			<key>max</key>
+			<integer>30</integer>
+			<key>isSegmented</key>
+			<true/>
+			<key>showValue</key>
+			<true/>
+			<key>segmentCount</key>
+			<integer>15</integer>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Widget 1</string>
+		</dict>
+		<!--<dict>
+			<key>cell</key>
+			<string>PSSegmentCell</string>
+			<key>default</key>
+			<integer>0</integer>
+			<key>defaults</key>
+			<string>com.shepgoba.swprefs</string>
+			<key>id</key>
+			<string>widgetOption1</string>
+			<key>key</key>
+			<string>widgetType1</string>
+			<key>validValues</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+			</array>
+			<key>validTitles</key>
+			<array>
+				<string>Battery Health</string>
+				<string>Storage</string>
+				<string>Wi-Fi</string>
+				<string>Cellular</string>
+			</array>
+		</dict>-->
+		<dict>
+			<key>key</key>
+			<string>widgetType1</string>
+			<key>label</key>
+			<string>Widget 1 Type</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>defaults</key>
+			<string>com.shepgoba.swprefs</string>
+			<key>validValues</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<!-- <integer>4</integer> -->
+			</array>
+			<key>validTitles</key>
+			<array>
+				<string>Battery Health</string>
+				<string>Storage</string>
+				<string>Wi-Fi</string>
+				<string>Cellular</string>
+				<!-- <string>Utility</string> -->
+			</array>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Widget 2</string>
+			<key>id</key>
+			<string>widget2Group</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.shepgoba.swprefs</string>
+			<key>key</key>
+			<string>widget2Enabled</string>
+			<key>id</key>
+			<string>widget2EnabledSwitch</string>
+			<key>label</key>
+			<string>Widget 2 Enabled</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>widgetOption2</string>
+			<key>key</key>
+			<string>widgetType2</string>
+			<key>label</key>
+			<string>Widget 2 Type</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>defaults</key>
+			<string>com.shepgoba.swprefs</string>
+			<key>validValues</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<integer>3</integer>
+				<!-- <integer>4</integer> -->
+			</array>
+			<key>validTitles</key>
+			<array>
+				<string>Battery Health</string>
+				<string>Storage</string>
+				<string>Wi-Fi</string>
+				<string>Cellular</string>
+				<!-- <string>Utility</string> -->
+			</array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Tweak by @shepgoba</string>
+			<key>action</key>
+			<string>openTwitter</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Icon by @JannikCrack</string>
+			<key>action</key>
+			<string>openIconTwitter</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>SettingsWidgets v1.2.3</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>SettingsWidgets</string>
+</dict>
+</plist>
